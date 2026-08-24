@@ -43,8 +43,6 @@ body {
 .about-text p,
 .card p {
   text-align: justify;
-  hyphens: auto;
-  -webkit-hyphens: auto;
 }
 
 img,
