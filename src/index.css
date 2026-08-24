@@ -330,6 +330,33 @@ section[id] {
   object-fit: cover;
 }
 
+.hero-play-fallback {
+  position: absolute;
+  bottom: 96px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.85);
+  background-color: rgba(0, 44, 78, 0.55);
+  color: var(--color-white);
+  font-size: 22px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 4px;
+  backdrop-filter: blur(4px);
+  transition: transform 0.25s ease, background-color 0.25s ease;
+}
+
+.hero-play-fallback:hover {
+  transform: translateX(-50%) scale(1.1);
+  background-color: rgba(46, 143, 229, 0.8);
+}
+
 .hero-mask {
   position: absolute;
   inset: 0;
@@ -719,7 +746,7 @@ section[id] {
   margin-bottom: 8px;
 }
 
-.form-field input,
+.form-field input:not([type="checkbox"]),
 .form-field textarea {
   width: 100%;
   border: 1px solid var(--color-gray-4);
@@ -738,9 +765,22 @@ section[id] {
 
 .form-legal {
   display: flex;
+  align-items: flex-start;
   gap: 10px;
   font-size: 13px;
   color: var(--color-gray-3);
+}
+
+.form-legal input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  margin-top: 3px;
+  flex-shrink: 0;
+  accent-color: var(--color-blue);
+}
+
+.form-legal label {
+  min-width: 0;
 }
 
 .form-legal a {
