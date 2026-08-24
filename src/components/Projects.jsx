@@ -34,7 +34,7 @@ export default function Projects() {
         <div className="masonry" id="masonry-container">
           {visible.map((project, index) => (
             <figure key={project.src} className="masonry-item" onClick={() => setSelected(index)}>
-              <img src={project.src} alt={project.title} loading="lazy" />
+              <img src={project.src} alt={project.alt || project.title} loading="lazy" />
             </figure>
           ))}
         </div>

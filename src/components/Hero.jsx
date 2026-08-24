@@ -54,7 +54,13 @@ export default function Hero() {
 
   return (
     <section id="inicio" className="hero">
-      <img className="hero-bg" src={HERO_IMAGE} alt="Equipo de MIRAX Painting pintando un interior en Vigo" />
+      <img
+        className="hero-bg"
+        src={HERO_IMAGE}
+        alt="Pintores de MIRAX Painting pintando un interior en Vigo"
+        fetchPriority="high"
+        decoding="async"
+      />
       {hasVideos && (
         <>
           <video
@@ -93,6 +99,7 @@ export default function Hero() {
       <div className="container hero-content">
         <span className="hero-pretitle">Pintores en Vigo · Pontevedra</span>
         <h1 className="hero-title">
+          <span className="sr-only">Pintores en Vigo y Pontevedra — </span>
           Transformamos
           <br />
           tus espacios<span className="hero-title-accent">_</span>

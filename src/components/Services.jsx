@@ -6,7 +6,7 @@ export default function Services() {
       <div className="container">
         <div className="section-head section-head--center">
           <span className="kicker">Servicios</span>
-          <h2 className="section-title">Pintura profesional en Pontevedra</h2>
+          <h2 className="section-title">Servicios de pintura en Vigo y Pontevedra</h2>
           <p className="section-description">
             Utilizamos únicamente materiales de alta calidad y trabajamos de manera eficiente para garantizar
             resultados impecables dentro del presupuesto disponible.

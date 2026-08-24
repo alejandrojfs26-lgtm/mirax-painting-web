@@ -91,6 +91,7 @@ export const STATS = [
 export const PROJECTS = [
   ...GALLERY_IMAGES.map((src, index) => ({
     title: `Trabajo reciente MIRAX · Vigo (${index + 1})`,
+    alt: `Trabajo de pintura profesional en Vigo realizado por MIRAX Painting — foto ${index + 1}`,
     src,
   })),
   {

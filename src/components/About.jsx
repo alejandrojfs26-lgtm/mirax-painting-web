@@ -12,7 +12,7 @@ export default function About() {
         />
         <div className="about-text">
           <span className="kicker">Sobre nosotros</span>
-          <h2 className="section-title">Experiencia y acabados de calidad</h2>
+          <h2 className="section-title">Pintores con más de 20 años de experiencia en Vigo</h2>
           <p style={{ marginTop: 20 }}>
             <strong>MIRAX Painting®</strong>, tu empresa de pintura profesional de confianza. Contamos con{" "}
             <strong>más de 20 años de experiencia en el sector</strong> y un equipo altamente capacitado, con las
