@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://alejandrojfs26-lgtm.github.io/mirax-painting-web/sitemap.xml
+Sitemap: https://miraxpainting.es/sitemap.xml

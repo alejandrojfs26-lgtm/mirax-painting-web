@@ -1,16 +1,51 @@
-# React + Vite
+# MIRAX Painting® — Web oficial
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Web corporativa de MIRAX Painting, empresa de pintura profesional en Vigo y Pontevedra.
+React 19 + Vite. Despliegue: Hostinger (miraxpainting.es).
 
-Currently, two official plugins are available:
+## Comandos
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+```bash
+npm install       # instalar dependencias
+npm run dev       # servidor de desarrollo
+npm run build     # build de producción → dist/
+npm run preview   # previsualizar el build
+npm run lint      # linter (oxlint)
+```
 
-## React Compiler
+## Estructura
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- `src/components/` — secciones de la página (Hero con video, Servicios, Proyectos, Contacto…)
+- `src/data.js` — textos, servicios, galería y datos del negocio
+- `src/assets/gallery/` — fotos reales de trabajos (comprimidas)
+- `src/assets/videos/` — videos del hero (H.264 baseline, sin audio, faststart)
+- `public/` — favicon, og-image, robots.txt, sitemap.xml y .htaccess (Hostinger)
 
-## Expanding the Oxlint configuration
+## Despliegue en Hostinger
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+### Opción A — Automática (recomendada)
+
+1. En el panel de Hostinger: **Sitios web → FTP** y anota servidor, usuario y contraseña.
+2. En GitHub: **Settings → Secrets and variables → Actions → New repository secret**, crea:
+   - `FTP_SERVER` (ej. ftp.miraxpainting.es)
+   - `FTP_USERNAME`
+   - `FTP_PASSWORD`
+3. Pestaña **Actions → Deploy a Hostinger (FTP) → Run workflow**.
+
+Sube el contenido de `dist/` a `public_html/`. El `.htaccess` incluido fuerza HTTPS,
+redirige www, activa GZIP y caché de un año para los assets.
+
+### Opción B — Manual
+
+1. `npm run build`
+2. Sube **el contenido de `dist/`** a `public_html/` con File Manager o FTP.
+3. Verifica que `.htaccess` quedó copiado (activa "mostrar archivos ocultos").
+
+## Checklist SEO tras el despliegue
+
+- [ ] SSL activo en Hostinger (Seguridad → SSL) y forzar HTTPS
+- [ ] Google Search Console: dar de alta `https://miraxpainting.es` y enviar `sitemap.xml`
+- [ ] Perfil de Empresa de Google (google.com/business) con dirección Av. de Balaídos 51
+- [ ] Pedir reseñas a clientes en Google Maps
+- [ ] Comprobar datos estructurados: https://search.google.com/test/rich-results
+- [ ] PageSpeed: https://pagespeed.web.dev/
