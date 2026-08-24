@@ -4,33 +4,45 @@ import { HERO_IMAGE, HERO_VIDEOS } from "../data"
 export default function Hero() {
   const [videoIndex, setVideoIndex] = useState(0)
   const videoRef = useRef(null)
-  const allowMotion =
-    typeof window !== "undefined" && !window.matchMedia("(prefers-reduced-motion: reduce)").matches
-  const showVideo = allowMotion && HERO_VIDEOS.length > 0
+  const hasVideos = HERO_VIDEOS.length > 0
 
   useEffect(() => {
-    if (!showVideo) return undefined
+    if (!hasVideos) return undefined
     const video = videoRef.current
     if (!video) return undefined
 
     video.muted = true
     video.setAttribute("muted", "")
 
-    const tryPlay = () =>
-      video.play().catch(() => {
-        /* autoplay bloqueado por política del navegador */
-      })
+    const tryPlay = () => {
+      if (video.paused) {
+        const promise = video.play()
+        if (promise) promise.catch(() => {})
+      }
+    }
 
     tryPlay()
-    const onFirstInteraction = () => tryPlay()
-    window.addEventListener("touchstart", onFirstInteraction, { once: true, passive: true })
-    return () => window.removeEventListener("touchstart", onFirstInteraction)
-  }, [showVideo, videoIndex])
+
+    const events = ["touchstart", "pointerdown", "scroll", "keydown", "canplay"]
+    events.forEach((event) =>
+      event === "canplay"
+        ? video.addEventListener(event, tryPlay)
+        : window.addEventListener(event, tryPlay, { once: true, passive: true }),
+    )
+
+    return () => {
+      events.forEach((event) =>
+        event === "canplay"
+          ? video.removeEventListener(event, tryPlay)
+          : window.removeEventListener(event, tryPlay),
+      )
+    }
+  }, [hasVideos, videoIndex])
 
   return (
     <section id="inicio" className="hero">
       <img className="hero-bg" src={HERO_IMAGE} alt="Equipo de MIRAX Painting pintando un interior en Vigo" />
-      {showVideo && (
+      {hasVideos && (
         <video
           className="hero-video"
           ref={videoRef}
@@ -41,6 +53,8 @@ export default function Hero() {
           muted
           playsInline
           preload="auto"
+          disablePictureInPicture
+          onCanPlay={() => videoRef.current?.play().catch(() => {})}
           onEnded={() => setVideoIndex((index) => (index + 1) % HERO_VIDEOS.length)}
         />
       )}
