@@ -1,8 +1,14 @@
 import LOGO_SRC from "./assets/logo.webp";
+import photoBanyera from "./assets/gallery/Mirax1.jpeg";
+import photoAirless from "./assets/gallery/Mirax2.jpeg";
+import photoLocal from "./assets/gallery/Mirax5.jpeg";
+import photoCocina from "./assets/gallery/Mirax6.jpeg";
+import photoBano from "./assets/gallery/mirax7.jpeg";
+import photoHogar from "./assets/gallery/mirax8.jpeg";
+import photoHero from "./assets/gallery/Mirax11.jpeg";
+import photoAbout from "./assets/gallery/Mirax12.jpeg";
 
 export { LOGO_SRC };
-
-export const CDN = "https://miraxpainting.es/wp-content/uploads";
 
 const galleryImages = import.meta.glob("./assets/gallery/*.jpeg", {
   eager: true,
@@ -33,54 +39,54 @@ export const NAV_LINKS = [
   { label: "Contacto", href: "#contacto" },
 ];
 
-export const HERO_IMAGE = `${CDN}/2023/04/mirapainting_header_home_2.jpg`;
+export const HERO_IMAGE = photoHero;
 
 export const SERVICES = [
   {
     title: "Pintura de bañeras y duchas",
     description:
       "El desgaste hace que bañeras y platos de ducha pierdan su apariencia original. Lo solucionamos sin reemplazarlos, con pinturas epóxicas y poliuretano de alta durabilidad y sistema Airless. También restauramos azulejos y eliminamos gotelé.",
-    image: `${CDN}/2023/08/mirapainting_proyectos_banera.jpg`,
+    image: photoBanyera,
     alt: "Bañera restaurada con pintura epóxica por MIRAX Painting",
   },
   {
     title: "Pintura con pistola Airless",
     description:
       "Aplicación profesional con pistola Airless para paredes, techos, puertas y muebles. Acabados precisos y uniformes en cualquier superficie, ya sea una habitación o toda tu casa, comercio u oficina.",
-    image: `${CDN}/2023/04/mirapainting_pintura_pistola_resultado.jpeg`,
+    image: photoAirless,
     alt: "Pared pintada con pistola Airless por MIRAX Painting",
   },
   {
     title: "Pintura para comercios",
     description:
       "Renovamos el aspecto de tu local sin interrupciones para tu negocio. Usamos técnicas innovadoras y pinturas de poliuretano de dos componentes para acabados duraderos en paredes, techos, fachadas y mobiliario.",
-    image: `${CDN}/2023/04/mirapainting_restaurante.jpg`,
+    image: photoLocal,
     alt: "Restaurante pintado por MIRAX Painting en Vigo",
   },
   {
     title: "Pintura de cocinas",
     description:
       "Renovamos paredes, techos y mobiliario de tu cocina. Además, podemos actualizar mesadas y fregaderos con pinturas específicas, encontrando las tonalidades que mejor se adapten a tus gustos y necesidades.",
-    image: `${CDN}/2023/04/mirapainting_servicios_mesada.jpg`,
+    image: photoCocina,
     alt: "Encimera y mobiliario de cocina renovados con pintura",
   },
   {
     title: "Pintura de baños",
     description:
       "Soluciones personalizadas para dar un aspecto nuevo a tu baño: pintura de paredes y techos, restauración de bañeras, platos de ducha y azulejos con acabados resistentes a la humedad.",
-    image: `${CDN}/2023/04/mirapainting_decoracion_bano-e1681377398668.jpg`,
+    image: photoBano,
     alt: "Baño moderno pintado por MIRAX Painting",
   },
   {
     title: "Pintura para hogares",
     description:
       "Transformamos cualquier habitación en un espacio acogedor y moderno, con diseños personalizados para cada estancia interior o exterior. Especialistas en espacios de medidas complejas y plazos ajustados.",
-    image: `${CDN}/2023/08/mirapainting_servicios.jpeg`,
+    image: photoHogar,
     alt: "Habitación pintada por MIRAX Painting",
   },
 ];
 
-export const ABOUT_IMAGE = `${CDN}/2026/04/ef51b8da-56c6-4c39-a02e-8151fa542978-1024x768.jpg`;
+export const ABOUT_IMAGE = photoAbout;
 
 export const STATS = [
   { value: "+20", label: "Años de experiencia" },
@@ -94,24 +100,6 @@ export const PROJECTS = [
     alt: `Trabajo de pintura profesional en Vigo realizado por MIRAX Painting — foto ${index + 1}`,
     src,
   })),
-  {
-    title: "Señalización de aparcamientos",
-    src: `${CDN}/2026/04/22746df4-7d52-47d5-9b4a-5379b63a6cdc.jpg`,
-  },
-  { title: "Lacado de puertas", src: `${CDN}/2023/08/mirapainting_proyectos_lacado_puertas.jpg` },
-  {
-    title: "Comunidad de vecinos",
-    src: `${CDN}/2023/05/mirapainting_servicios_comunidad_vecinos.jpg`,
-  },
-  { title: "Suelos epóxicos", src: `${CDN}/2023/04/mirapainting_proyectos_suelo_epoxico-1.jpg` },
-  { title: "Oficinas y superficies comerciales", src: `${CDN}/2023/04/mirapainting_decoracion_oficina.jpg` },
-  { title: "Pintura de encimeras", src: `${CDN}/2023/04/mirapainting_servicios_mesada.jpg` },
-  { title: "Restauración de bañeras", src: `${CDN}/2023/08/mirapainting_proyectos_banera.jpg` },
-  { title: "Pistola Airless en vivienda", src: `${CDN}/2023/04/mirapainting_pintura_pistola_resultado.jpeg` },
-  { title: "Decoración de baños", src: `${CDN}/2023/04/mirapainting_decoracion_bano-e1681377398668.jpg` },
-  { title: "Reforma de restaurante", src: `${CDN}/2023/04/mirapainting_restaurante.jpg` },
-  { title: "Proyecto reciente en Vigo", src: `${CDN}/2026/04/ef51b8da-56c6-4c39-a02e-8151fa542978-1024x768.jpg` },
-  { title: "Pintura integral de hogar", src: `${CDN}/2023/08/mirapainting_servicios.jpeg` },
 ];
 
 export const LEGAL_LINKS = [
