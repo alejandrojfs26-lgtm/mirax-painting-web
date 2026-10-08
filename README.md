@@ -23,23 +23,28 @@ npm run lint      # linter (oxlint)
 
 ## Despliegue en Hostinger
 
-### Opción A — Automática (recomendada)
+### Opción A — Automática (recomendada, en uso)
 
-1. En el panel de Hostinger: **Sitios web → FTP** y anota servidor, usuario y contraseña.
-2. En GitHub: **Settings → Secrets and variables → Actions → New repository secret**, crea:
-   - `FTP_SERVER` (ej. ftp.miraxpainting.es)
-   - `FTP_USERNAME`
-   - `FTP_PASSWORD`
-3. Pestaña **Actions → Deploy a Hostinger (FTP) → Run workflow**.
+Flujo: `push a main` → GitHub Actions ejecuta lint + build → sube el `dist/`
+compilado a la rama **`deploy`** → Hostinger (integración Git por OAuth) publica
+esa rama en `public_html/`.
 
-Sube el contenido de `dist/` a `public_html/`. El `.htaccess` incluido fuerza HTTPS,
-redirige www, activa GZIP y caché de un año para los assets.
+Configuración única en hPanel (**Sitios web → dashboard → Avanzado → Git**):
 
-### Opción B — Manual
+1. Repositorio conectado: `alejandrojfs26-lgtm/mirax-painting-web`.
+2. **Rama:** `deploy` (no `main`: la Git genérica de Hostinger no ejecuta `npm run build`).
+3. **Directorio de despliegue:** raíz (`public_html/`).
+4. Primera vez: `public_html/` debe estar **vacío** (borra los archivos del sitio
+   anterior con el File Manager) y pulsar **Deploy**.
+5. Auto-deployment activo: cada push a `main` reconstruye y vuelve a publicar.
 
-1. `npm run build`
-2. Sube **el contenido de `dist/`** a `public_html/` con File Manager o FTP.
-3. Verifica que `.htaccess` quedó copiado (activa "mostrar archivos ocultos").
+### Opción B — FTP manual (fallback)
+
+1. En GitHub: **Settings → Secrets and variables → Actions**, crea `FTP_SERVER`,
+   `FTP_USERNAME` (usuario tipo `u123456789`, no el email) y `FTP_PASSWORD`.
+2. Pestaña **Actions → Deploy a Hostinger (FTP) → Run workflow**.
+3. O sube el contenido de `dist/` con File Manager. Verifica que `.htaccess` quedó
+   copiado (activa "mostrar archivos ocultos").
 
 ## Checklist SEO tras el despliegue
 
