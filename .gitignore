@@ -12,6 +12,9 @@ dist
 dist-ssr
 *.local
 
+# Respaldos de Hostinger (no versionar: contienen base de datos y archivos)
+respaldos/
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
