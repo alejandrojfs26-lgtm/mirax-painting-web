@@ -1,21 +1,20 @@
 import LOGO_SRC from "./assets/logo.webp";
-import photoBanyera from "./assets/gallery/Mirax1.jpeg";
-import photoAirless from "./assets/gallery/Mirax2.jpeg";
-import photoLocal from "./assets/gallery/Mirax5.jpeg";
-import photoCocina from "./assets/gallery/Mirax6.jpeg";
-import photoBano from "./assets/gallery/mirax7.jpeg";
-import photoHogar from "./assets/gallery/mirax8.jpeg";
-import photoHero from "./assets/gallery/Mirax11.jpeg";
-import photoAbout from "./assets/gallery/Mirax12.jpeg";
+import heroHome from "./assets/galeria/hero-home.jpg";
+import photoBaneras from "./assets/galeria/pintura-baneras.jpg";
+import photoAirless from "./assets/galeria/pintura-airless.jpg";
+import photoComercios from "./assets/galeria/pintura-comercios.jpg";
+import photoCocinas from "./assets/galeria/pintura-cocinas.jpg";
+import photoBanos from "./assets/galeria/pintura-banos.jpg";
+import photoHogares from "./assets/galeria/pintura-hogares.jpg";
+import aboutPhoto from "./assets/galeria/sobre-nosotros.jpg";
+import projAparcamientos from "./assets/galeria/proyecto-aparcamientos.jpg";
+import projLacadoPuertas from "./assets/galeria/proyecto-lacado-puertas.jpg";
+import projComunidad from "./assets/galeria/proyecto-comunidad-vecinos.jpg";
+import projSuelos from "./assets/galeria/proyecto-suelos-epoxicos.jpg";
+import projOficinas from "./assets/galeria/proyecto-oficinas.jpg";
+import projEncimeras from "./assets/galeria/proyecto-encimeras.jpg";
 
 export { LOGO_SRC };
-
-const galleryImages = import.meta.glob("./assets/gallery/*.jpeg", {
-  eager: true,
-  import: "default",
-});
-
-export const GALLERY_IMAGES = Object.values(galleryImages);
 
 const heroVideos = import.meta.glob("./assets/videos/*.mp4", {
   eager: true,
@@ -39,54 +38,54 @@ export const NAV_LINKS = [
   { label: "Contacto", href: "#contacto" },
 ];
 
-export const HERO_IMAGE = photoHero;
+export const HERO_IMAGE = heroHome;
 
 export const SERVICES = [
   {
     title: "Pintura de bañeras y duchas",
     description:
       "El desgaste hace que bañeras y platos de ducha pierdan su apariencia original. Lo solucionamos sin reemplazarlos, con pinturas epóxicas y poliuretano de alta durabilidad y sistema Airless. También restauramos azulejos y eliminamos gotelé.",
-    image: photoBanyera,
-    alt: "Bañera restaurada con pintura epóxica por MIRAX Painting",
+    image: photoBaneras,
+    alt: "Bañera restaurada con pintura epóxica por MIRAX Painting en Vigo",
   },
   {
     title: "Pintura con pistola Airless",
     description:
       "Aplicación profesional con pistola Airless para paredes, techos, puertas y muebles. Acabados precisos y uniformes en cualquier superficie, ya sea una habitación o toda tu casa, comercio u oficina.",
     image: photoAirless,
-    alt: "Pared pintada con pistola Airless por MIRAX Painting",
+    alt: "Pared pintada con pistola Airless por MIRAX Painting en Vigo",
   },
   {
     title: "Pintura para comercios",
     description:
       "Renovamos el aspecto de tu local sin interrupciones para tu negocio. Usamos técnicas innovadoras y pinturas de poliuretano de dos componentes para acabados duraderos en paredes, techos, fachadas y mobiliario.",
-    image: photoLocal,
+    image: photoComercios,
     alt: "Restaurante pintado por MIRAX Painting en Vigo",
   },
   {
     title: "Pintura de cocinas",
     description:
       "Renovamos paredes, techos y mobiliario de tu cocina. Además, podemos actualizar mesadas y fregaderos con pinturas específicas, encontrando las tonalidades que mejor se adapten a tus gustos y necesidades.",
-    image: photoCocina,
-    alt: "Encimera y mobiliario de cocina renovados con pintura",
+    image: photoCocinas,
+    alt: "Cocina renovada con pintura por MIRAX Painting en Vigo",
   },
   {
     title: "Pintura de baños",
     description:
       "Soluciones personalizadas para dar un aspecto nuevo a tu baño: pintura de paredes y techos, restauración de bañeras, platos de ducha y azulejos con acabados resistentes a la humedad.",
-    image: photoBano,
-    alt: "Baño moderno pintado por MIRAX Painting",
+    image: photoBanos,
+    alt: "Baño pintado y renovado por MIRAX Painting en Vigo",
   },
   {
     title: "Pintura para hogares",
     description:
       "Transformamos cualquier habitación en un espacio acogedor y moderno, con diseños personalizados para cada estancia interior o exterior. Especialistas en espacios de medidas complejas y plazos ajustados.",
-    image: photoHogar,
-    alt: "Habitación pintada por MIRAX Painting",
+    image: photoHogares,
+    alt: "Habitación pintada por MIRAX Painting en Vigo",
   },
 ];
 
-export const ABOUT_IMAGE = photoAbout;
+export const ABOUT_IMAGE = aboutPhoto;
 
 export const STATS = [
   { value: "+20", label: "Años de experiencia" },
@@ -95,11 +94,36 @@ export const STATS = [
 ];
 
 export const PROJECTS = [
-  ...GALLERY_IMAGES.map((src, index) => ({
-    title: `Trabajo reciente MIRAX · Vigo (${index + 1})`,
-    alt: `Trabajo de pintura profesional en Vigo realizado por MIRAX Painting — foto ${index + 1}`,
-    src,
-  })),
+  {
+    title: "Señalización de aparcamientos",
+    alt: "Señalización y pintura de aparcamientos en Vigo por MIRAX Painting",
+    src: projAparcamientos,
+  },
+  {
+    title: "Lacado de puertas",
+    alt: "Lacado de puertas en Vigo por MIRAX Painting",
+    src: projLacadoPuertas,
+  },
+  {
+    title: "Pintura de comunidad de vecinos",
+    alt: "Pintura de comunidad de vecinos en Vigo por MIRAX Painting",
+    src: projComunidad,
+  },
+  {
+    title: "Suelos epóxicos",
+    alt: "Pintura de suelos epóxicos en Vigo por MIRAX Painting",
+    src: projSuelos,
+  },
+  {
+    title: "Pintura de oficinas y superficies comerciales",
+    alt: "Pintura de oficinas y locales comerciales en Vigo por MIRAX Painting",
+    src: projOficinas,
+  },
+  {
+    title: "Pintura de encimeras",
+    alt: "Pintura de encimeras y mesadas de cocina en Vigo por MIRAX Painting",
+    src: projEncimeras,
+  },
 ];
 
 export const LEGAL_LINKS = [
