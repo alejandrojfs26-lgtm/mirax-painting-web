@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import { PROJECTS } from "../data"
 
-const INITIAL_COUNT = 12
+const INITIAL_COUNT = 20
 
 export default function Projects() {
   const [visibleCount, setVisibleCount] = useState(INITIAL_COUNT)
