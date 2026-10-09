@@ -126,6 +126,33 @@ export const PROJECTS = [
   },
 ];
 
+export const FAQS = [
+  {
+    q: "¿Cuánto cuesta un pintor en Vigo?",
+    a: "El precio depende de los metros cuadrados, el estado de las paredes y el tipo de pintura. En MIRAX Painting® el presupuesto es gratuito y sin compromiso: llámanos al 627 256 959 y valoramos tu proyecto en persona.",
+  },
+  {
+    q: "¿Cuánto tardáis en pintar un piso en Vigo?",
+    a: "Un piso de unos 80 m² suele pintarse en 3 a 5 días de trabajo, según el estado de las superficies y los acabados elegidos. Trabajamos con plazos ajustados y protegemos muebles y suelos antes de empezar.",
+  },
+  {
+    q: "¿Restauráis bañeras y platos de ducha en lugar de cambiarlos?",
+    a: "Sí. Restauramos bañeras, platos de ducha y azulejos con pinturas epóxicas y de poliuretano de alta durabilidad y acabado profesional, sin necesidad de sustituirlos y con una inversión mucho menor.",
+  },
+  {
+    q: "¿Trabajáis en toda la provincia de Pontevedra?",
+    a: "Damos servicio en Vigo y su área metropolitana (Coia, Teis, Bouzas, Navia, Nigrán, Gondomar, Redondela, Cangas y Mos) y en el resto de la provincia de Pontevedra.",
+  },
+  {
+    q: "¿Qué es la pintura con pistola Airless?",
+    a: "Es un sistema de proyección sin aire que aplica la pintura de forma rápida y uniforme, ideal para paredes, techos, puertas y muebles. Consigue acabados lisos y profesionales con menos tiempo y sin apenas salpicaduras.",
+  },
+  {
+    q: "¿El presupuesto tiene algún coste o compromiso?",
+    a: "No. El presupuesto es totalmente gratuito y sin compromiso. Escríbenos por teléfono o WhatsApp y visitamos tu vivienda, local o comunidad en Vigo para darte un precio cerrado.",
+  },
+];
+
 export const LEGAL_LINKS = [
   { label: "Política de Privacidad", href: "https://miraxpainting.es/politica-de-privacidad" },
   { label: "Aviso Legal", href: "https://miraxpainting.es/aviso-legal" },
