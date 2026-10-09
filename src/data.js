@@ -13,6 +13,10 @@ import projComunidad from "./assets/galeria/proyecto-comunidad-vecinos.jpg";
 import projSuelos from "./assets/galeria/proyecto-suelos-epoxicos.jpg";
 import projOficinas from "./assets/galeria/proyecto-oficinas.jpg";
 import projEncimeras from "./assets/galeria/proyecto-encimeras.jpg";
+import projViviendas from "./assets/galeria/proyecto-viviendas.jpg";
+import projCocina from "./assets/galeria/proyecto-cocina.jpg";
+import projGarajes from "./assets/galeria/proyecto-garajes.jpg";
+import projPintura from "./assets/galeria/proyecto-pintura.jpg";
 
 export { LOGO_SRC };
 
@@ -123,6 +127,26 @@ export const PROJECTS = [
     title: "Pintura de encimeras",
     alt: "Pintura de encimeras y mesadas de cocina en Vigo por MIRAX Painting",
     src: projEncimeras,
+  },
+  {
+    title: "Pintura de viviendas",
+    alt: "Pintura de interiores de viviendas en Vigo por MIRAX Painting",
+    src: projViviendas,
+  },
+  {
+    title: "Renovación de cocinas",
+    alt: "Renovación y pintura de cocinas en Vigo por MIRAX Painting",
+    src: projCocina,
+  },
+  {
+    title: "Garajes y aparcamientos",
+    alt: "Pintura de garajes y aparcamientos en Vigo por MIRAX Painting",
+    src: projGarajes,
+  },
+  {
+    title: "Trabajos de pintura profesional",
+    alt: "Trabajo de pintura profesional realizado por MIRAX Painting en Vigo",
+    src: projPintura,
   },
 ];
 
